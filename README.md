@@ -13,6 +13,8 @@ This is based on [geerlingguy's example of this](https://github.com/geerlingguy/
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
+> Another Note: If it complains about something being in ~/Applications that it expects to install/manage itself, remove that file, and then re-run this. In most cases, your settings will remain intact, as long as they were stored somewhere other than the application binary.
+
 ### Running a specific set of tagged tasks
 
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag.
