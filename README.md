@@ -19,7 +19,7 @@ This is based on [geerlingguy's example of this](https://github.com/geerlingguy/
 
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag.
 
-    ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
+    ansible-playbook main.yml -i inventory -K --tags "docker,zsh-setup"
 
 ## Overriding Defaults
 
