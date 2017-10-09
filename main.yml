@@ -1,0 +1,29 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - config.yml
+      tags: [ 'always' ]
+
+  tasks:
+    - include_tasks: tasks/ansible-setup.yml
+      tags: [ 'ansible-setup' ]
+
+    - include_tasks: tasks/zsh-setup.yml
+      when: enable_zsh
+      tags: [ 'zsh-setup' ]
+
+    - include_tasks: tasks/homebrew.yml
+      tags: [ 'homebrew' ]
+
+    - include_tasks: tasks/extra-packages.yml
+      tags: [ 'extra-packages' ]
+
+    - include_tasks: tasks/docker.yml
+      tags: [ 'docker' ]

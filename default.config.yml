@@ -1,0 +1,97 @@
+---
+downloads: ~/.ansible-downloads/
+
+enable_zsh: False
+
+homebrew_additional_casks: []
+homebrew_additional_packages: []
+
+homebrew_code_packages:
+  - composer
+  - go
+  - node
+  - nvm
+  - php71
+  - php71-gmp
+  - php71-intl
+  - php71-mcrypt
+  - ruby
+  - yarn
+
+homebrew_core_casks:
+  - cyberduck
+  - slack
+
+homebrew_core_packages:
+  - dos2unix
+  - git
+  - gpg
+  - hub
+  - jq
+  - m-cli
+  - mcrypt
+  - openssl
+  - pandoc
+  - wget
+
+homebrew_database_casks:
+  - sequel-pro
+
+homebrew_database_packages:
+  - sqlite
+
+homebrew_diagnostic_casks:
+  - charles
+
+homebrew_diagnostic_packages:
+  - httpie
+
+homebrew_editor_casks:
+  - atom
+  - phpstorm
+  - visual-studio-code
+
+homebrew_graphics_packages:
+  - graphviz
+  - imagemagick
+
+homebrew_infrastructure_packages:
+  - awless
+  - awscli
+  - wp-cli
+
+homebrew_virtual_environment_casks:
+  - vagrant
+  - virtualbox
+
+homebrew_virtual_environment_packages:
+  - docker
+  - docker-compose
+  - docker-machine
+
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/core
+  - homebrew/php
+  - wallix/awless
+
+# Install packages from other package managers.
+composer_packages: []
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
+gem_packages: []
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages: []
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
+
+# Shell config file. .bashrc for bash users. .zshrc for zsh users.
+shell_config_file: ".bashrc"

@@ -1,0 +1,97 @@
+---
+- name: Install Homebrew
+  shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+- name: Tap Homebrew taps
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_taps }}"
+
+- name: Update Homebrew
+  homebrew:
+    update_homebrew: True
+
+- name: Install core Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_core_casks }}"
+
+- name: Install core Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_core_packages }}"
+
+- name: Install code Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_code_packages }}"
+
+- name: Install database Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_database_casks }}"
+
+- name: Install database Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_database_packages }}"
+
+- name: Install diagnostic Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_diagnostic_casks }}"
+
+- name: Install diagnostic Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_diagnostic_packages }}"
+
+- name: Install editor Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_editor_casks }}"
+
+- name: Install graphics Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_graphics_packages }}"
+
+- name: Install infrastructure Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_infrastructure_packages }}"
+
+- name: Install virtual environment Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_virtual_environment_casks }}"
+
+- name: Install virtual environment Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_virtual_environment_packages }}"
+
+- name: Install additional Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_additional_casks }}"
+
+- name: Install additional Homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_additional_packages }}"

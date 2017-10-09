@@ -1,0 +1,22 @@
+---
+- name: Check existence of default docker machine
+  shell: docker-machine ls|grep default
+  register: default_docker_machine
+
+- name: Create default docker machine
+  shell: docker-machine create -d virtualbox default
+  when: default_docker_machine.stdout|regex_search('default') == ''
+
+- name: Get environment variables for default docker machine
+  shell: docker-machine env default
+  register: default_docker_environment
+
+- name: Set environment for Docker
+  copy:
+    content: "{{ default_docker_environment.stdout }}"
+    dest: "{{ ansible_env.HOME }}/.docker-env"
+
+- name: Include environment file for Docker
+  lineinfile:
+    line: "source '{{ ansible_env.HOME }}/.docker-env'"
+    path: "{{ ansible_env.HOME }}/{{ shell_config_file }}"
