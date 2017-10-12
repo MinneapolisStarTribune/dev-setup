@@ -66,6 +66,12 @@
     state: present
   with_items: "{{ homebrew_graphics_packages }}"
 
+- name: Install infrastructure Homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_infrastructure_casks }}"
+
 - name: Install infrastructure Homebrew packages
   homebrew:
     name: "{{ item }}"

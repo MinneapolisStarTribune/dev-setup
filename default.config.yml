@@ -55,6 +55,9 @@ homebrew_graphics_packages:
   - graphviz
   - imagemagick
 
+homebrew_infrastructure_casks:
+  - inspec
+
 homebrew_infrastructure_packages:
   - awless
   - awscli
