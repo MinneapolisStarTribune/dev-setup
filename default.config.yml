@@ -24,6 +24,7 @@ homebrew_core_casks:
 
 homebrew_core_packages:
   - dos2unix
+  - exa
   - git
   - gpg
   - hub
